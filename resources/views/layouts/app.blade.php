@@ -27,8 +27,8 @@
 </body>
 <script>
     async function toClipboard() {
-        var copyText = $('.result').text();
-        var data = [new ClipboardItem({ "text/plain": new Blob([copyText], { type: "text/plain" }) })];
+        let copyText = $('.result').text();
+        let data = [new ClipboardItem({"text/plain": new Blob([copyText], {type: "text/plain"})})];
         await navigator.clipboard.write(data);
         alert(`Ссылка: ${copyText} успешно скопирована!`);
     }
