@@ -1,7 +1,7 @@
-This is a test task for Profiliance Group
+# PROJECT NAME : Link shortener
+## GOAL : This is a test task for Profiliance Group
 
 ## HOW TO
-
  - Clone this repo ```git clone https://github.com/Yur-ok/profilance_group.git```
  - cd into *profilance_group*
  - run command ```composer create-project```
