@@ -2,10 +2,10 @@ This is a test task for Profiliance Group
 
 ## HOW TO
 
- - Clone this repo
- - cd into profilance_group
- - run command __composer create-project__
- - open .env and configure DB (only if you don't use mysql)
- - run migration __php artisan migrate__
- - then run local dev server __php artisan serve__
+ - Clone this repo ```git clone https://github.com/Yur-ok/profilance_group.git```
+ - cd into *profilance_group*
+ - run command ```composer create-project```
+ - open ```.env``` and configure DB ( **only if you don't use mysql** )
+ - run migration ```php artisan migrate```
+ - then run local dev server ```php artisan serve```
  - open link in browser and check
