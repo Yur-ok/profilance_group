@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="csrf-param" content="_token" />
+    <meta name="csrf-param" content="_token"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
     <title>Profilance Group - link shortener</title>
@@ -14,14 +14,18 @@
 
 </head>
 <body class="">
-    <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
-        <h1 style="font-family: Helvetica, Nunito, sans-serif">Profilance Group</h1>
-        <div class="" style="width: 100%;">
-            @yield('form')
-        </div>
-        <div class="mt-8">
-            @yield('result')
-        </div>
+<div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
+    <header class="text-center">
+        <a href="{{ route('main') }}" class="text-decoration-none">
+            <h1 style="font-family: Helvetica, Nunito, sans-serif">Profilance Group</h1>
+            <h2>Link shortener</h2>
+        </a>
+    </header>
+    <div class="" style="width: 100%;">
+        @yield('form')
+    </div>
+    <div class="mt-8">
+        @yield('result')
     </div>
 </div>
 </body>
