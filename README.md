@@ -1,6 +1,6 @@
 This is a test task for Profiliance Group
 
-#HOW TO
+## HOW TO
 
  - Clone this repo
  - cd into profilance_group
