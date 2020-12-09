@@ -15,6 +15,7 @@
 </head>
 <body class="">
     <div class="container d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
+        <h1 style="font-family: Helvetica, Nunito, sans-serif">Profilance Group</h1>
         <div class="" style="width: 100%;">
             @yield('form')
         </div>
