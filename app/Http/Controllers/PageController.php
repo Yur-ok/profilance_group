@@ -25,14 +25,19 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $shortUrlLength = 6;
-        $shortUrlChars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $shortUrl = $this->generateShortUrl();
+        $isExist = Link::where('short_url', $shortUrl)->get();
+        while (!empty($isExist->toArray())) {
+            echo 'true';
+            $shortUrl = $this->generateShortUrl();
+            $isExist = Link::where('short_url', $shortUrl)->get();
+        }
         $link = new Link();
         $data = $this->validate($request, [
             'origin_url' => 'required',
         ]);
+        $data['short_url'] = $shortUrl;
         $link->fill($data);
-        $link->short_url = substr(str_shuffle($shortUrlChars), mt_rand(0, strlen($shortUrlChars) - 6), $shortUrlLength);
         $link->save();
 
         return view('create', compact('link'));
@@ -52,5 +57,12 @@ class PageController extends Controller
         }
 
         return redirect('/')->with('status', 'Link is expired!');
+    }
+
+    private function generateShortUrl($length = 6)
+    {
+        $shortUrlLength = $length;
+        $shortUrlChars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        return substr(str_shuffle($shortUrlChars), mt_rand(0, strlen($shortUrlChars) - 6), $shortUrlLength);
     }
 }
