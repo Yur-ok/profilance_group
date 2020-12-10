@@ -9,7 +9,7 @@ class Link extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['origin_url'];
+    protected $fillable = ['origin_url', 'short_url'];
 
     public function getShort(): string
     {
