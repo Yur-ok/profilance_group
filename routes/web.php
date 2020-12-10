@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('create');
-})->name('main');
+Route::get('/', [PageController::class, 'index'])->name('main');
 
 Route::resource('links', PageController::class);
